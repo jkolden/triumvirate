@@ -14,7 +14,7 @@ The application can be imported into any Applications Express workspace by navig
 
 ## Application Components
 
-### Tables
+### Database Tables
 
 This application uses the following tables:
 
@@ -127,15 +127,28 @@ CREATE TABLE  "TRI_SUPPLIES_MASTER"
    )
 /
 ```
-### Sequences
+### Database Sequences
 
 There are five sequences used by this application:
 
-```TRI_ITEMS_SEQ``` Used for the ```ITEM_ID``` column in the ```TRI_SUPPLIES_MASTER``` table.
-```TRI_JOBS_SEQ``` Used when creating new jobs in ```TRI_JOBS```.
-```TRI_LABOR_LINE_SEQ``` Used when adding labor to jobs in ```TRI_JOB_LABOR```
-```TRI_VISITS_SEQ``` Used when adding a new job visit in ```TRI_JOB_VISITS```
-```TRI_WASTE_LINE_SEQ``` Used when adding waste lines in ```TRI_WASTE_INFORMATION```
+- ```TRI_ITEMS_SEQ``` Used for the ```ITEM_ID``` column in the ```TRI_SUPPLIES_MASTER``` table.
+- ```TRI_JOBS_SEQ``` Used when creating new jobs in ```TRI_JOBS```.
+- ```TRI_LABOR_LINE_SEQ``` Used when adding labor to jobs in ```TRI_JOB_LABOR```
+- ```TRI_VISITS_SEQ``` Used when adding a new job visit in ```TRI_JOB_VISITS```
+- ```TRI_WASTE_LINE_SEQ``` Used when adding waste lines in ```TRI_WASTE_INFORMATION```
 
+### Application Pages:
+
+| Page Number   | Page Name     |Page Purpose|
+| ------------- | ------------- |-------------
+|3  |Visits|This page is a job visit maintenance page for the SC to clean up/change/delete data as necessary before the demo. |4  |Visit Entry|The user is brought to this page when clicking the ```Create New``` button on the main page. Here they can enter visit header information before proceeding to the visit details page.
+|6  | Analytics  |This page displays all of the analytics charts for the application. There are four pie charts on this page.
+|8  |Supply Items|This is a report of all supply items that are used in the application.
+|9  |Supply Items Entry|This is a data entry screen for entering/editing supply items.
+|10 |Job Report|This page displays all jobs currently in the system
+|11 |Jobs Entry|This is a data entry screen for adding and editing job information
+|12 |Job Cards |This is the main application page that shows jobs, job visits and provides links for creating new job visits
+
+|
 
 
