@@ -149,4 +149,8 @@ There are five sequences used by this application:
 |11 |Jobs Entry|This is a data entry screen for adding and editing job information
 |12 |Job Cards |This is the main application page that shows jobs, job visits and provides links for creating new job visits
 
+Main Page:
+<img width="1247" alt="main page" src="https://user-images.githubusercontent.com/21246211/40200845-2dbe2c68-59d2-11e8-97c6-a4b529dd8678.png">
 
+Analytics Page:
+<img width="1158" alt="charts" src="https://user-images.githubusercontent.com/21246211/40200796-12276ae6-59d2-11e8-9a1c-50e19c724f28.png">
