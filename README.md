@@ -149,6 +149,4 @@ There are five sequences used by this application:
 |11 |Jobs Entry|This is a data entry screen for adding and editing job information
 |12 |Job Cards |This is the main application page that shows jobs, job visits and provides links for creating new job visits
 
-|
-
 
