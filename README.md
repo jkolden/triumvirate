@@ -22,10 +22,10 @@ This application uses the following tables:
 
 This table holds top-level information for each job. Each job can and will have multiple associated visits.
 ```
-CREATE TABLE  "TRI_JOBS" 
-   (	
-  "JOB_ID" NUMBER, 
-	"JOB_NUMBER" VARCHAR2(15 CHAR), 
+CREATE TABLE  "TRI_JOBS"
+   (
+  "JOB_ID" NUMBER,
+	"JOB_NUMBER" VARCHAR2(15 CHAR),
 	"JOB_NAME" VARCHAR2(30 CHAR)
    )
 /
@@ -36,17 +36,17 @@ CREATE TABLE  "TRI_JOBS"
 This table holds header-level informatuon for individual job visits. Job visits will have header info and records in ```TRI_JOB_LABOR```, ```TRI_JOB_SUPPLIES``` and ```TRI_WASTE_INFORMATION```.
 
 ```
-CREATE TABLE  "TRI_JOB_VISITS" 
-   (	
-  "JOB_ID" NUMBER, 
-	"VISIT_ID" NUMBER, 
-	"VISIT_DATE" DATE, 
-	"SITE_SUPERVISOR" VARCHAR2(60 CHAR), 
-	"DIRECT_SHIP_FLAG" VARCHAR2(1 CHAR), 
-	"LESS_THAN_FULL_FLAG" VARCHAR2(1 CHAR), 
-	"LAB_PACK_FLAG" VARCHAR2(1 CHAR), 
-	"DOWNTIME_FLAG" VARCHAR2(1 CHAR), 
-	"DOWNTIME_REASON" VARCHAR2(240 CHAR), 
+CREATE TABLE  "TRI_JOB_VISITS"
+   (
+  "JOB_ID" NUMBER,
+	"VISIT_ID" NUMBER,
+	"VISIT_DATE" DATE,
+	"SITE_SUPERVISOR" VARCHAR2(60 CHAR),
+	"DIRECT_SHIP_FLAG" VARCHAR2(1 CHAR),
+	"LESS_THAN_FULL_FLAG" VARCHAR2(1 CHAR),
+	"LAB_PACK_FLAG" VARCHAR2(1 CHAR),
+	"DOWNTIME_FLAG" VARCHAR2(1 CHAR),
+	"DOWNTIME_REASON" VARCHAR2(240 CHAR),
 	"VERIFIED" VARCHAR2(1 CHAR)
    )
 /
@@ -56,21 +56,21 @@ CREATE TABLE  "TRI_JOB_VISITS"
 This table holds individual employee's time associated with each job visit.
 
 ```
-CREATE TABLE  "TRI_JOB_LABOR" 
-   (	
-  "JOB_ID" NUMBER, 
-	"VISIT_ID" NUMBER, 
-	"LABOR_LINE_ID" NUMBER, 
-	"EMPLOYEE" VARCHAR2(60 CHAR), 
-	"VISIT_DATE" DATE, 
-	"POSITION" VARCHAR2(30), 
-	"VEHICLE_NUMBER" VARCHAR2(30), 
-	"LOAD_TRAVEL" NUMBER, 
-	"ONSITE" NUMBER, 
-	"LUNCH" NUMBER, 
-	"UNLOAD" NUMBER, 
-	"TRAVEL" NUMBER, 
-	"ONSITE_TSDF" NUMBER, 
+CREATE TABLE  "TRI_JOB_LABOR"
+   (
+  "JOB_ID" NUMBER,
+	"VISIT_ID" NUMBER,
+	"LABOR_LINE_ID" NUMBER,
+	"EMPLOYEE" VARCHAR2(60 CHAR),
+	"VISIT_DATE" DATE,
+	"POSITION" VARCHAR2(30),
+	"VEHICLE_NUMBER" VARCHAR2(30),
+	"LOAD_TRAVEL" NUMBER,
+	"ONSITE" NUMBER,
+	"LUNCH" NUMBER,
+	"UNLOAD" NUMBER,
+	"TRAVEL" NUMBER,
+	"ONSITE_TSDF" NUMBER,
 	"OFFICE_COMPLIANCE" NUMBER
    )
 /
@@ -81,12 +81,12 @@ CREATE TABLE  "TRI_JOB_LABOR"
 This table holds supplies usage data for each item/job visit.
 
 ```
-CREATE TABLE  "TRI_JOB_SUPPLIES" 
-   (	
-  "JOB_ID" NUMBER, 
-	"ITEM_ID" NUMBER, 
-	"QUANTITY" NUMBER, 
-	"TYPE" VARCHAR2(15), 
+CREATE TABLE  "TRI_JOB_SUPPLIES"
+   (
+  "JOB_ID" NUMBER,
+	"ITEM_ID" NUMBER,
+	"QUANTITY" NUMBER,
+	"TYPE" VARCHAR2(15),
 	"VISIT_ID" NUMBER
    )
 /
@@ -96,33 +96,33 @@ CREATE TABLE  "TRI_JOB_SUPPLIES"
 This table holds waste collection data for each job visit. One job visit can and will have multiple records in this table.
 
 ```
-CREATE TABLE  "TRI_WASTE_INFORMATION" 
-   (	"JOB_ID" NUMBER, 
-	"WASTE_LINE_ID" NUMBER, 
-	"DOC_NUMBER" VARCHAR2(15), 
-	"APPROVAL_CODE" VARCHAR2(15), 
-	"FIVE_G_QTY" NUMBER, 
-	"SIXTEEN_G_QTY" NUMBER, 
-	"TWENTY_G_QTY" NUMBER, 
-	"THIRTY_G_QTY" NUMBER, 
-	"FORTY_G_QTY" NUMBER, 
-	"FIFTYFIVE_G_QTY" NUMBER, 
-	"EIGHTYFIVE_G_QTY" NUMBER, 
-	"SQ_YD" NUMBER, 
+CREATE TABLE  "TRI_WASTE_INFORMATION"
+   (	"JOB_ID" NUMBER,
+	"WASTE_LINE_ID" NUMBER,
+	"DOC_NUMBER" VARCHAR2(15),
+	"APPROVAL_CODE" VARCHAR2(15),
+	"FIVE_G_QTY" NUMBER,
+	"SIXTEEN_G_QTY" NUMBER,
+	"TWENTY_G_QTY" NUMBER,
+	"THIRTY_G_QTY" NUMBER,
+	"FORTY_G_QTY" NUMBER,
+	"FIFTYFIVE_G_QTY" NUMBER,
+	"EIGHTYFIVE_G_QTY" NUMBER,
+	"SQ_YD" NUMBER,
 	"VISIT_ID" NUMBER
    )
 /
 ```
 #### TRI_SUPPLIES_MASTER
 
-This table holds setup data needed to run the application. Each supply item that could be used on a job visit will have a record in this table and will be classified by one of the following three 'types': Supplies, Bio & Pharmacy Suppliers, Personal Protective Equipment. These values are hardcoded in application item ```P9_TYPE``` on page 9 of the application 
+This table holds setup data needed to run the application. Each supply item that could be used on a job visit will have a record in this table and will be classified by one of the following three 'types': Supplies, Bio & Pharmacy Suppliers, Personal Protective Equipment. These values are hardcoded in application item ```P9_TYPE``` on page 9 of the application
 
 ```
-CREATE TABLE  "TRI_SUPPLIES_MASTER" 
-   (	
-  "ITEM_ID" NUMBER, 
-	"ITEM_DESCRIPTION" VARCHAR2(60), 
-	"PRICE" NUMBER, 
+CREATE TABLE  "TRI_SUPPLIES_MASTER"
+   (
+  "ITEM_ID" NUMBER,
+	"ITEM_DESCRIPTION" VARCHAR2(60),
+	"PRICE" NUMBER,
 	"TYPE" VARCHAR2(15)
    )
 /
@@ -147,7 +147,7 @@ There are five sequences used by this application:
 |9  |Supply Items Entry|This is a data entry screen for entering/editing supply items.
 |10 |Job Report|This page displays all jobs currently in the system
 |11 |Jobs Entry|This is a data entry screen for adding and editing job information
-|12 |Job Cards |This is the main application page that shows jobs, job visits and provides links for creating new job visits
+|12 |Job Cards |This is the main application page that shows jobs, job visits and provides links for creating new job visits.
 
 Main Page:
 <img width="1247" alt="main page" src="https://user-images.githubusercontent.com/21246211/40200845-2dbe2c68-59d2-11e8-97c6-a4b529dd8678.png">
